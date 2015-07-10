@@ -1,0 +1,251 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Cleanup and base Functions\n"
+"POT-Creation-Date: 2015-07-01 00:04-0000\n"
+"PO-Revision-Date: 2015-07-01 00:25-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/class-wp-cbf-admin.php:153
+msgid "Settings"
+msgstr "Paramètres"
+
+#: admin/class-wp-cbf-admin.php:286
+msgid "Make this my login logo"
+msgstr "En faire mon logo de page de connection"
+
+#: admin/partials/wp-cbf-admin_settings.php:18
+msgid "Customize the admin"
+msgstr "Personnaliser l'admin"
+
+#: admin/partials/wp-cbf-admin_settings.php:23
+#: admin/partials/wp-cbf-admin_settings.php:27
+msgid "Login Logo"
+msgstr "Logo de connexion"
+
+#: admin/partials/wp-cbf-admin_settings.php:26
+msgid "Upload Logo"
+msgstr "Télécharger Logo"
+
+#: admin/partials/wp-cbf-admin_settings.php:36
+#: admin/partials/wp-cbf-admin_settings.php:39
+msgid "Link Login Logo to homepage instead of WordPress.org"
+msgstr ""
+"Lien du logo de connexion  vers la page d'accueil au lieu de WordPress.org"
+
+#: admin/partials/wp-cbf-admin_settings.php:45
+#: admin/partials/wp-cbf-admin_settings.php:48
+msgid "Login Background Color"
+msgstr "Couleur d'arrière-plan de la page de connexion"
+
+#: admin/partials/wp-cbf-admin_settings.php:53
+#: admin/partials/wp-cbf-admin_settings.php:56
+msgid "Login Button and Links Color"
+msgstr "Couleur du bouton et des liens sur la page de connection"
+
+#: admin/partials/wp-cbf-admin_settings.php:61
+#: admin/partials/wp-cbf-admin_settings.php:64
+msgid "Remove WordPress Icon from admin bar"
+msgstr "Retirer l'icône WordPress de la barre d'admin"
+
+#: admin/partials/wp-cbf-admin_settings.php:69
+#: admin/partials/wp-cbf-admin_settings.php:71
+msgid "Change Admin footer text with your own"
+msgstr ""
+"Changer le texte de pied de page de l'administration avec votre propre texte"
+
+#: admin/partials/wp-cbf-admin_settings.php:73
+msgid "Theme created for your awesome business"
+msgstr "Thème créé pour votre entreprise géniale"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:18
+msgid "Cleanup and basic functionalities"
+msgstr "Nettoyage et les fonctionnalités de base"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:25
+msgid "Clean up the head section"
+msgstr "Nettoyer la section head"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:34
+msgid "Remove Injected CSS for comment widget"
+msgstr "Enlever le CSS injecté par le widget de commentaires"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:43
+msgid "Remove Injected CSS for galleries"
+msgstr "Enlever le CSS injecté par les galeries"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:49
+msgid "Add Post, page or product slug to body class"
+msgstr "Ajoutez le nom du Post, de la page ou du produit à la classe du body"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:52
+msgid "Add Post slug to body class"
+msgstr "Ajoutez le nom du Post à la classe du body"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:58
+msgid "Prettify search url - http://yourwebsite/search/search_terms/"
+msgstr "Enjoliver recherche url - http://yourwebsite/search/search_terms/"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:61
+msgid "Make search url pretty(ex: http://yourwebsite/search/search_terms/)"
+msgstr ""
+"Enjoliver l'url de recherche(ex: http://yourwebsite/search/search_terms/)"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:67
+msgid "Remove CSS and JS files query string versions"
+msgstr "Supprimer les versions des fichiers CSS et JS"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:70
+msgid "Remove CSS and JS versions (uncheck for dev)"
+msgstr ""
+"Supprimer les versions des fichiers CSS et JS(ne pas selectionner lors du "
+"developpement)"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:77
+msgid "Load jQuery from CDN instead of the basic wordpress script"
+msgstr "Charger jQuery depuis un CDN au lieu du script de base de wordpress"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:80
+msgid "Load jQuery from CDN"
+msgstr "Charger jQuery depuis un CDN"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:86
+msgid "Hide Admin Bar on the Front-end"
+msgstr "Cacher la barre d'administrateur sur les pages frontend de votre site"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:89
+msgid "Hide Admin Bar"
+msgstr "Cacher la barre d'administration"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:94
+msgid ""
+"Create write_log() function to log errors in debug.log file (WP_DEBUG_LOG "
+"must be set to true)"
+msgstr ""
+"Créer la fonction write_log() pour enregistrer les erreurs dans le fichier "
+"debug.log (WP_DEBUG_LOG doit avoir la valeur true)"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:97
+msgid ""
+"Create write_log() function to log errors in debug.log file , note: "
+"WP_DEBUG_LOG must be set to true. Use it as follow: write_log(\"your debug "
+"message\") "
+msgstr ""
+"Créer la fonction write_log() pour enregistrer les erreurs dans le fichier "
+"debug.log, note: WP_DEBUG_LOG doit avoir la valeur true. Utiliser comme "
+"suit: write_log(\"your debug message\")"
+
+#: admin/partials/wp-cbf-images_settings.php:18
+msgid "Images specific functionalities"
+msgstr "Fonctionnalités spécifiques aux images"
+
+#: admin/partials/wp-cbf-images_settings.php:23
+msgid "Wrap images in figure tags"
+msgstr "Envelopper les images dans les tags figure"
+
+#: admin/partials/wp-cbf-images_settings.php:26
+msgid "Wrap images with figure tags"
+msgstr "Envelopper les images dans les tags figure"
+
+#: admin/partials/wp-cbf-images_settings.php:32
+msgid "Remove Inline CSS added to Images wp-caption"
+msgstr "Enlever le CSS inline ajouté au wp-caption d'images"
+
+#: admin/partials/wp-cbf-images_settings.php:35
+msgid "Remove wp-caption inline CSS"
+msgstr "Enlever le CSS inline pour wp-caption"
+
+#: admin/partials/wp-cbf-images_settings.php:41
+#: admin/partials/wp-cbf-images_settings.php:44
+msgid "Clean output of images attributes in editor"
+msgstr "Nettoyer les attributs d'images dans l'éditeur"
+
+#: admin/partials/wp-cbf-images_settings.php:50
+msgid "Remove width and height in editor for better respoonsive images"
+msgstr ""
+"Supprimer les largeur et hauteur dans l'éditeur pour de meilleurs images "
+"responsives"
+
+#: admin/partials/wp-cbf-images_settings.php:53
+msgid "Remove width and height in editor"
+msgstr "Retirer la largeur et la hauteur dans l'éditeur"
+
+#: admin/partials/wp-cbf-images_settings.php:59
+#: admin/partials/wp-cbf-images_settings.php:62
+msgid "Add retina support"
+msgstr "Ajouter le support d'images retina"
+
+#: admin/partials/wp-cbf-images_settings.php:65
+msgid "Add retina js script to front end"
+msgstr "Ajouter le script retina js à votre site web"
+
+#: admin/partials/wp-cbf-images_settings.php:68
+msgid "Add retina js script to front-end"
+msgstr "Ajouter le script retina js à votre site web"
+
+#: admin/partials/wp-cbf-images_settings.php:80
+msgid ""
+"Add your new images size with desired width, height and hard cropping option"
+msgstr ""
+"Ajouter votre nouvelle taille des images avec la largeur, la hauteur, et "
+"l'option de rognage désirées"
+
+#: admin/partials/wp-cbf-images_settings.php:81
+msgid "Add New Image sizes"
+msgstr "Ajouter de nouvelles tailles d'images"
+
+#: admin/partials/wp-cbf-images_settings.php:84
+msgid "Add New Image size"
+msgstr "Ajouter une nouvelle taille d'image"
+
+#: admin/partials/wp-cbf-images_settings.php:89
+msgid "New Images size name"
+msgstr "Nouveau nom de taille d'Images"
+
+#: admin/partials/wp-cbf-images_settings.php:99
+#: admin/partials/wp-cbf-images_settings.php:135
+msgid ""
+"Crop thumbnail to exact dimensions (normally thumbnails are proportional)"
+msgstr "Rogner l'image aux dimensions exactes ?"
+
+#: admin/partials/wp-cbf-images_settings.php:145
+#: admin/partials/wp-cbf-images_settings.php:146
+msgid "Add one of images sizes to default gallery"
+msgstr "Ajoutez l'un des formats d'images par default au shortcode Galerie"
+
+#: admin/partials/wp-cbf-privacy_settings.php:18
+msgid "Extra privacy settings"
+msgstr "Paramètres de confidentialité supplémentaire"
+
+#: admin/partials/wp-cbf-privacy_settings.php:22
+#: admin/partials/wp-cbf-privacy_settings.php:25
+msgid "Add a meta tag for referrer"
+msgstr "Ajouter une balise meta referrer"
+
+#: admin/partials/wp-cbf-privacy_settings.php:28
+msgid "Choose one of the value below for the referrer meta"
+msgstr "Choisissez une des valeurs ci-dessous pour le meta tag referrer"
+
+#: admin/partials/wp-cbf-privacy_settings.php:29
+msgid ""
+"Choose one of the value below for the referrer meta, for more info check"
+msgstr ""
+"Choisissez une des valeurs ci-dessous pour le meta tag referrer, pour plus "
+"d'informations"
+
+#: admin/partials/wp-cbf-privacy_settings.php:29
+msgid "W3C page about Referrer meta tag"
+msgstr "Page du W3C sur la balise meta Referrer"

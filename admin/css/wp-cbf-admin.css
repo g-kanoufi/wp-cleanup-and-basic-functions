@@ -1,0 +1,56 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/* General */
+ .hide{
+ 	display:none;
+ }
+
+.wp_cbf-metaboxes fieldset{
+	min-height:32px;
+}
+
+/* Images */
+.retina-js, .new-images-size{
+	margin-top:12px;
+	margin-left:20px;
+}
+
+.existing-images-size{
+	margin:0 0 12px 24px;
+}
+.existing-images-size h4{
+	float:left;
+	margin-right:32px;
+}
+.existing-images-size input[type="number"]{
+	margin:12px 0 6px;
+}
+
+/* Admin */
+ .wp_cbf-admin-colors{
+	line-height: 34px;
+	padding: 6px 0;
+ }
+
+ .wp_cbf-upload-preview{
+	min-height:100px;
+	position:relative;
+}
+.wp_cbf-upload-preview img{
+	max-width:150px;
+	height:auto;
+}
+.wp_cbf-delete-image{
+	position: absolute;
+	top: 0;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	text-align: center;
+	border-radius: 50%;
+	line-height: 20px;
+	cursor: pointer;
+}
