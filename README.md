@@ -1,5 +1,5 @@
 WP Cleanup and Basic Functions
- ===========
+==============================
 
 **Contributors:** guillaume-lostweb
   
