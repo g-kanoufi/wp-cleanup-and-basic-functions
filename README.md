@@ -1,5 +1,6 @@
- Plugin Name
+WP Cleanup and Basic Functions
  ===========
+
 **Contributors:** guillaume-lostweb
   
 **Donate link:** http://lostwebdesigns.com
