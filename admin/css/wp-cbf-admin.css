@@ -11,6 +11,10 @@
 .wp_cbf-metaboxes fieldset{
 	min-height:32px;
 }
+input[type=url]{
+    margin: 0 0 12px;
+}
+
 
 /* Images */
 .retina-js, .new-images-size{

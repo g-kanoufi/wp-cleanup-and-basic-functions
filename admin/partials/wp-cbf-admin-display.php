@@ -40,6 +40,7 @@
 			$prettify_search = $options['prettify_search'];
 			$css_js_versions = $options['css_js_versions'];
 			$jquery_cdn = $options['jquery_cdn'];
+			$cdn_provider = $options['cdn_provider'];
 			$hide_admin_bar = $options['hide_admin_bar'];
 			$write_log_fn = $options['write_log_fn'];
 			$yoast_comments_cleanup = $options['yoast_comments_cleanup'];

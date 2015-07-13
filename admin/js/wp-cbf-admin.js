@@ -62,7 +62,7 @@
 	 });
 
 	 window.send_to_editor = function(html) {
-		var image_url = $('img',html).attr('src');
+		var image_url = ($('img', html).attr('src') !== undefined)? $('img', html).attr('src') : $(html).attr('href');
 		$('#login_logo_url').val(image_url);
 		$('#upload_logo_preview').removeClass('hide');
 		$('#upload_logo_preview img').attr('src', image_url);

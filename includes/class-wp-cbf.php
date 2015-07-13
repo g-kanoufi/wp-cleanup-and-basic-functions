@@ -103,6 +103,7 @@ class Wp_Cbf {
 			'prettify_search' => 0,
 			'css_js_versions' => 0,
 			'jquery_cdn' => 0,
+                        'cdn_provider' => '',
 			'hide_admin_bar' => 0,
 			'write_log_fn' => 0,
 

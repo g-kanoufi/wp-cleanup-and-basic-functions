@@ -61,7 +61,7 @@
 			<input type="checkbox" id="<?php echo $this->options_slug;?>-retina_support" class="show-child-if-checked" name="<?php echo $this->options_slug;?>[retina_support]" value="1" <?php if($retina_support == '1') echo 'checked';?>/>
 			<span><?php esc_attr_e('Add retina support', $this->plugin_name);?></span>
 		</label>
-		<fieldset class="retina-js <?php if($retina_support == '0') echo 'hide'; ?>">
+		<fieldset class="retina-js <?php if($retina_support != '1') echo 'hide'; ?>">
 			<legend class="screen-reader-text"><span><?php _e('Add retina js script to front end', $this->plugin_name);?></span></legend>
 			<label for="<?php echo $this->options_slug;?>-add_retina_js">
 				<input type="checkbox" id="<?php echo $this->options_slug;?>-add_retina_js" name="<?php echo $this->options_slug;?>[add_retina_js]" value="1" <?php if($add_retina_js == '1') echo 'checked';?>/>
@@ -83,7 +83,7 @@
 			<input type="checkbox" id="<?php echo $this->options_slug;?>-new_images_size" class="show-child-if-checked" name="<?php echo $this->options_slug;?>[new_images_size]" value="1" <?php if($new_images_size == '1') echo 'checked';?>/>
 			<span><?php esc_attr_e('Add New Image size', $this->plugin_name);?></span>
 		</label>
-		<fieldset class="new-images-size <?php if($new_images_size == '0') echo 'hide'; ?>">
+		<fieldset class="new-images-size <?php if($new_images_size != '1') echo 'hide'; ?>">
 			<label for="<?php echo $this->options_slug;?>-new_images_size_name">
 				<input id="<?php echo $this->options_slug;?>-new_images_size_name" name="<?php echo $this->options_slug;?>[images_size][name]" type="text" placeholder="ex: blog_featured">
 				<span><?php esc_attr_e('New Images size name', $this->plugin_name);?></span>
@@ -99,9 +99,10 @@
 				<span><?php esc_attr_e('Crop thumbnail to exact dimensions (normally thumbnails are proportional)',  $this->plugin_name);?></span>
 			</label>
 		</fieldset>
-		<fieldset class="existing-images-size-container <?php if($new_images_size_position < 1) echo 'hide'; ?>">
+		<fieldset class="existing-images-size-container <?php if($new_images_size_position < 2) echo 'hide'; ?>">
 			<h3>Already Existing Images sizes</h3>
-			<?php foreach ($images_size_arr as $existing_images_size_name => $existing_images_size_values) :?>
+                        <?php if(is_array($images_size_arr)):
+                                foreach ($images_size_arr as $existing_images_size_name => $existing_images_size_values) :?>
 				<?php if($existing_images_size_name != 'post-thumbnail'):?>
 				<fieldset class="existing-images-size">
 					<h4><?php echo $existing_images_size_name;?></h4>
@@ -137,6 +138,7 @@
 				</fieldset>
 				<?php endif;?>
 			<?php endforeach;?>
+                    <?php endif;?>
 		</fieldset>
 	</fieldset>
 
