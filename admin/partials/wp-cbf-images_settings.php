@@ -54,6 +54,15 @@
 		</label>
 	</fieldset>
 
+	<!-- allow svg upload to the media uploader  -->
+	<fieldset>
+		<legend class="screen-reader-text"><span><?php _e('Add svg upload capability to the Media Uploader (Thumbnail in list and grid won\'t show, but it\'s there)', $this->plugin_name);?></span></legend>
+		<label for="<?php echo $this->options_slug;?>-svg_support">
+			<input type="checkbox" id="<?php echo $this->options_slug;?>-svg_support" name="<?php echo $this->options_slug;?>[svg_support]" value="1" <?php if($svg_support == '1') echo 'checked';?>/>
+			<span><?php esc_attr_e('Add svg upload capability to the Media Uploader (Thumbnail in list and grid won\'t show, but it\'s there)', $this->plugin_name);?></span>
+		</label>
+	</fieldset>
+
 	<!-- add retina support - generate @2x images and add support to create delete those images -->
 	<fieldset>
 		<legend class="screen-reader-text"><span><?php _e('Add retina support', $this->plugin_name);?></span></legend>

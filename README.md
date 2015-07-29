@@ -11,7 +11,7 @@ WP Cleanup and Basic Functions
   
 **Tested up to:** 4.2.2
   
-**Stable tag:** 1.0.1
+**Stable tag:** 1.1.1
   
 **License:** GPLv2 or later
   
@@ -89,6 +89,13 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 
 ## Changelog ##
+
+### 1.1.1 ###
+= 1.1.1 =
+Fixed a small bug for admin logo upload and some typo errors
+
+### 1.1 ###
+Fixed a bug with image upload when Retina support was not checked, also added svg upload in the Media uploader.
 
 ### 1.0.1 ###
 Fixed some notice error making all checkboxes checked on first save and added possibility to enter your how CDN provider and version for jQuery

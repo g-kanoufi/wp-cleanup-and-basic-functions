@@ -16,7 +16,7 @@
 <div id="admin-custom" class="wrap metabox-holder columns-2 wp_cbf-metaboxes hide">
 
 	<h2><?php esc_attr_e( 'Customize the admin', $this->plugin_name ); ?></h2>
-	<p>Add logo to login form change buttons color, disabel admin bar on front-end, etc...</p>
+	<p>Add logo to login form change buttons color, disable admin bar on front-end, etc...</p>
 
 	<!-- add your log to login -->
 	<fieldset>

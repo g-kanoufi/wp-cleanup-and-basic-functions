@@ -49,6 +49,7 @@
 			$inline_wp_caption = $options['inline_wp_caption'];
 			$images_attributes = $options['images_attributes'];
 			$images_wh = $options['images_wh'];
+			$svg_support = $options['svg_support'];
 			$images_figure_wrap = $options['images_figure_wrap'];
 			$retina_support = $options['retina_support'];
 			$add_retina_js = $options['add_retina_js'];

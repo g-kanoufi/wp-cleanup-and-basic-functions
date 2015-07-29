@@ -191,6 +191,7 @@ class Wp_Cbf_Admin {
         $valid['inline_wp_caption'] = (isset($input['inline_wp_caption']) && !empty($input['inline_wp_caption'])) ? 1 : 0;
         $valid['images_attributes'] = (isset($input['images_attributes']) && !empty($input['images_attributes'])) ? 1 : 0;
         $valid['images_wh'] = (isset($input['images_wh']) && !empty($input['images_wh'])) ? 1 : 0;
+        $valid['svg_support'] = (isset($input['svg_support']) && !empty($input['svg_support'])) ? 1 : 0;
         $valid['retina_support'] = (isset($input['retina_support']) && !empty($input['retina_support'])) ? 1 : 0;
         $valid['add_retina_js'] = (isset($input['add_retina_js']) && !empty($input['add_retina_js'])) ? 1 : 0;
         $valid['new_images_size'] = 0;
@@ -284,6 +285,34 @@ class Wp_Cbf_Admin {
 
         return $valid;
     }
+
+
+
+    /*
+    *
+    * Images / Media uploader
+    *
+     */
+
+
+    // Add Media Uploader svg support
+    public function wp_cbf_svg_support($mimes){
+        if(!empty($this->wp_cbf_options['svg_support'])){
+            $mimes['svg'] = 'image/svg+xml';
+        }
+        return $mimes;
+    }
+
+    public function wp_cbf_fix_svg_thumb_display() {
+        if(!empty($this->wp_cbf_options['svg_support'])){
+            $svg_css =  'td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail {
+              width: 100% !important;
+              height: auto !important;
+            }';
+            return $svg_css;
+        }
+    }
+
 
 
     public function wp_cbf_replace_thickbox_text($translated_text, $text, $domain) {

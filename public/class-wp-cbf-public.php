@@ -295,6 +295,11 @@ class Wp_Cbf_Public {
 	}
 
 
+
+
+
+
+
 	// Retina images
 	public function wp_cbf_retina_support_attachment_meta( $metadata, $attachment_id ) {
 		if(!empty($this->wp_cbf_options['retina_support'])){
@@ -311,8 +316,8 @@ class Wp_Cbf_Public {
 					}
 				}
 			}
-			return $metadata;
 		}
+		return $metadata;
 	}
 
 

@@ -103,7 +103,7 @@ class Wp_Cbf {
 			'prettify_search' => 0,
 			'css_js_versions' => 0,
 			'jquery_cdn' => 0,
-                        'cdn_provider' => '',
+	                           'cdn_provider' => '',
 			'hide_admin_bar' => 0,
 			'write_log_fn' => 0,
 
@@ -112,6 +112,7 @@ class Wp_Cbf {
 			'inline_wp_caption' => 0,
 			'images_attributes' => 0,
 			'images_wh' => 0,
+			'svg_support' => 0,
 			'retina_support' => 0,
 			'add_retina_js' => 0,
 			'new_images_size' => 0,
@@ -221,6 +222,11 @@ class Wp_Cbf {
 		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_name . '.php' );
 		$this->loader->add_filter( 'plugin_action_links_' . $plugin_basename, $plugin_admin, 'add_action_links' );
 		$this->loader->add_filter( 'gettext', $plugin_admin, 'wp_cbf_replace_thickbox_text' , 1, 3 );
+
+
+		// Images / Media Uploader
+		$this->loader->add_filter('upload_mimes', $plugin_admin, 'wp_cbf_svg_support');
+		$this->loader->add_action('admin_head', $plugin_admin, 'wp_cbf_fix_svg_thumb_display');
 
 		//Admin Customizations
 		$this->loader->add_action( 'login_headerurl', $plugin_admin, 'wp_cbf_login_logo_link' );
