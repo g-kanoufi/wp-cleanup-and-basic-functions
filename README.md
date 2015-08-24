@@ -9,9 +9,9 @@ WP Cleanup and Basic Functions
   
 **Requires at least:** 3.5.1
   
-**Tested up to:** 4.2.2
+**Tested up to:** 4.3
   
-**Stable tag:** 2.0.0
+**Stable tag:** 2.0.1
   
 **License:** GPLv2 or later
   
@@ -90,6 +90,9 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 
 ## Changelog ##
+
+### 2.0.1 ### 
+Fixed a saving small bug
 
 ### 2.0 ###
 This is a big refactor of this plugin, all code have been cleaned, also thickbox for Media upload has been changed with wp.media || Warning you might have to reset your login logo || Added set up fields for SMTP email settings with email test.

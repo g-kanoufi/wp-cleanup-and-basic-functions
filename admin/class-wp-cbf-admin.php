@@ -282,7 +282,7 @@ class Wp_Cbf_Admin {
         $valid['smtp_support'] = (isset($input['smtp_support']) && !empty($input['smtp_support'])) ? 1 : 0;
 
         $valid['smtp_from_name'] = (isset($input['smtp_from_name']) && !empty($input['smtp_from_name'])) ? sanitize_text_field($input['smtp_from_name']) : '';
-            if ( empty($valid['smtp_from_name']) ) { 
+            if (!empty($input['smtp_support']) &&  empty($valid['smtp_from_name']) ) { 
                 add_settings_error(
                         'smtp_from_name',                     // Setting title
                         'smtp_from_name_texterror',            // Error ID
@@ -291,7 +291,7 @@ class Wp_Cbf_Admin {
                 );
             }
         $valid['smtp_from_email'] = (isset($input['smtp_from_email']) && !empty($input['smtp_from_email'])) ? sanitize_text_field($input['smtp_from_email']) : '';
-            if ( !empty($valid['smtp_from_email']) && !preg_match( '/^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})/i', $valid['smtp_from_email']  ) ) { 
+            if ( !empty($input['smtp_support']) && !empty($valid['smtp_from_email']) && !preg_match( '/^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})/i', $valid['smtp_from_email']  ) ) { 
                 add_settings_error(
                         'smtp_from_email',                     // Setting title
                         'smtp_from_email_texterror',            // Error ID
@@ -302,7 +302,7 @@ class Wp_Cbf_Admin {
         $valid['smtp_authentication'] = (isset($input['smtp_authentication']) && !empty($input['smtp_authentication'])) ? 1 : 0;
 
         $valid['smtp_port'] = (isset($input['smtp_port']) && !empty($input['smtp_port'])) ? sanitize_text_field($input['smtp_port']) : '';
-            if ( !empty($valid['smtp_port']) && !preg_match( '/^[\d]{2,4})/i', $valid['smtp_port']  ) ) { 
+            if ( !empty($input['smtp_support']) && !empty($valid['smtp_port']) && !preg_match( '/^[\d]{2,4})/i', $valid['smtp_port']  ) ) { 
                 add_settings_error(
                         'smtp_port',                     // Setting title
                         'smtp_port_texterror',            // Error ID
@@ -313,7 +313,7 @@ class Wp_Cbf_Admin {
 
 
         $valid['smtp_host'] = (isset($input['smtp_host']) && !empty($input['smtp_host'])) ? sanitize_text_field($input['smtp_host']) : '';
-            if ( empty($valid['smtp_host']) ) { 
+            if ( !empty($input['smtp_support']) && empty($valid['smtp_host']) ) { 
                 add_settings_error(
                         'smtp_host',                     // Setting title
                         'smtp_host_texterror',            // Error ID
@@ -328,7 +328,7 @@ class Wp_Cbf_Admin {
         $valid['smtp_authentication'] = (isset($input['smtp_authentication']) && !empty($input['smtp_authentication'])) ? 1 : 0;
 
         $valid['smtp_username'] = (isset($input['smtp_username']) && !empty($input['smtp_username'])) ? sanitize_text_field($input['smtp_username']) : '';
-            if ( empty($valid['smtp_username']) ) { 
+            if ( !empty($input['smtp_support']) && empty($valid['smtp_username']) ) { 
                 add_settings_error(
                         'smtp_username',                     // Setting title
                         'smtp_username_texterror',            // Error ID
@@ -339,7 +339,7 @@ class Wp_Cbf_Admin {
 
         
         $valid['smtp_password'] = (isset($input['smtp_password']) && !empty($input['smtp_password'])) ? sanitize_text_field($input['smtp_password']) : '';
-            if ( empty($valid['smtp_password']) ) { 
+            if ( !empty($input['smtp_support']) && empty($valid['smtp_password']) ) { 
                 add_settings_error(
                         'smtp_password',                     // Setting title
                         'smtp_password_texterror',            // Error ID
