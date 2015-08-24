@@ -4,10 +4,6 @@
  */
 
 /* General */
- .hide{
- 	display:none;
- }
-
 .wp_cbf-metaboxes fieldset{
 	min-height:32px;
 }
@@ -34,6 +30,33 @@ input[type=url]{
 }
 
 /* Admin */
+p.updated {
+    background: #fff;
+    border-left: 4px solid #7ad03a;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    margin: 5px 0 2px;
+    padding: 1px 12px;
+}
+
+.smtp-results-debug pre{
+    background:#fff;
+    padding:2%;
+    white-space: pre-wrap;
+}
+
+.field-container{
+    margin-bottom:24px;
+}
+.field-container label{
+    display:block;
+    font-weight:700;
+}
+
+input.short{
+    border-color: #e35b5b;
+}
+
  .wp_cbf-admin-colors{
 	line-height: 34px;
 	padding: 6px 0;
@@ -50,11 +73,15 @@ input[type=url]{
 .wp_cbf-delete-image{
 	position: absolute;
 	top: 0;
-	width: 20px;
-	height: 20px;
-	background: #fff;
+	width: 24px;
+	height: 24px;
+	background: #222;
+        color:#fff;
 	text-align: center;
+        border: 2px solid #fff;
 	border-radius: 50%;
-	line-height: 20px;
+	line-height: 10px;
+        padding:0;
 	cursor: pointer;
+        box-shadow: 0 0 2px -1px #222;
 }

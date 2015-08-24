@@ -11,7 +11,7 @@ WP Cleanup and Basic Functions
   
 **Tested up to:** 4.2.2
   
-**Stable tag:** 1.1.1
+**Stable tag:** 2.0.0
   
 **License:** GPLv2 or later
   
@@ -35,6 +35,7 @@ It will help you:
 *    Setup a Logo and background color for your login page
 *    Add some more privacy adding a "referrer" meta tag
 *    If Yoast SEO is activated, can remove Yoast comments in head
+*    Set up for SMTP email settings    
 
 And actually many other things.
 Also besides the retina options(where you will be able to choose whether add the script from CDN or not), this plugin won't add any scritp or styles to your website frontend
@@ -90,6 +91,9 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 ## Changelog ##
 
+### 2.0 ###
+This is a big refactor of this plugin, all code have been cleaned, also thickbox for Media upload has been changed with wp.media || Warning you might have to reset your login logo || Added set up fields for SMTP email settings with email test.
+
 ### 1.1.1 ###
 = 1.1.1 =
 Fixed a small bug for admin logo upload and some typo errors
@@ -104,6 +108,9 @@ Fixed some notice error making all checkboxes checked on first save and added po
 Initial Release
 
 ## Upgrade Notice ##
+
+### 2.0 ###
+Major refactor of the plugin, all code have been cleaned, also thickbox for Media upload has been changed with wp.media || Warning you might have to reset your login logo
 
 ### 1.0.1 ###
 Many small bug and notices have been resolved, make sure to update your plugin

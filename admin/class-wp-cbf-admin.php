@@ -48,13 +48,11 @@ class Wp_Cbf_Admin {
      * @param      string    $plugin_name       The name of this plugin.
      * @param      string    $version    The version of this plugin.
      */
-    public function __construct( $plugin_name, $version, $options_slug, $options_data ) {
+    public function __construct( $plugin_name, $version ) {
 
         $this->plugin_name = $plugin_name;
         $this->version = $version;
-        $this->options_slug = $options_slug;
-        $this->options_data = $options_data;
-        $this->wp_cbf_options = get_option($this->options_slug);
+        $this->wp_cbf_options = get_option($this->plugin_name);
 
     }
 
@@ -77,10 +75,9 @@ class Wp_Cbf_Admin {
          * class.
          */
         if ( 'settings_page_wp-cbf' == get_current_screen() -> id ) {
-            wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-cbf-admin.css', array(), $this->version, 'all' );
             // Css rules for Color Picker
             wp_enqueue_style( 'wp-color-picker' );
-            wp_enqueue_style('thickbox');
+            wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/wp-cbf-admin.css', array('wp-color-picker'), $this->version, 'all' );
         }
 
     }
@@ -104,9 +101,8 @@ class Wp_Cbf_Admin {
          * class.
          */
         if ( 'settings_page_wp-cbf' == get_current_screen() -> id ) {
-            wp_enqueue_script('thickbox');
-                    wp_enqueue_script('media-upload');
-            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-cbf-admin.js', array( 'jquery', 'wp-color-picker', 'media-upload' ), $this->version, false );
+            wp_enqueue_media();
+            wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/wp-cbf-admin.js', array( 'jquery', 'wp-color-picker' ), $this->version, false );
         }
 
     }
@@ -126,7 +122,7 @@ class Wp_Cbf_Admin {
          *        Administration Menus: http://codex.wordpress.org/Administration_Menus
          *
          */
-        $plugin_screen_hook_suffix = add_options_page( 'WP Cleanup and Base Options Functions Setup', 'WP Cleanup', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page')
+        $plugin_screen_hook_suffix = add_options_page( __('WP Cleanup and Base Options Functions Setup', $this->plugin_name ), 'WP Cleanup', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page')
         );
     }
 
@@ -165,12 +161,12 @@ class Wp_Cbf_Admin {
      * @since    1.0.0
      */
     public function options_update() {
-        register_setting( $this->options_slug, $this->options_slug, array($this, 'validate') );
+        register_setting( $this->plugin_name, $this->plugin_name, array($this, 'validate') );
     }
 
     public function validate($input) {
         // All checkboxes inputs
-        $options = wp_parse_args(get_option($this->options_slug), $this->options_data);
+        $options = get_option($this->plugin_name);
         $valid = array();
 
         //Cleanup
@@ -207,14 +203,14 @@ class Wp_Cbf_Admin {
         }
         $new_images_size = array();
 
-        if(isset($input['new_images_size']) && $input['new_images_size'] != 0){
+        if(isset( $input['new_images_size']) &&  !empty($input['new_images_size']) ){
             $images_size_slug = sanitize_title($input['images_size']['name']);
             $images_size_name = sanitize_text_field($input['images_size']['name']);
             if(empty($images_size_slug)){
                 add_settings_error(
                         'new_images_size_error',                     // Setting title
                         'new_images_size_error_texterror',            // Error ID
-                        'Please enter a new images size name',     // Error message
+                        __('Please enter a new images size name', $this->plugin_name),    // Error message
                         'error'                         // Type of message
                 );
             }else{
@@ -224,7 +220,7 @@ class Wp_Cbf_Admin {
                     add_settings_error(
                             'new_images_size_width_error',                     // Setting title
                             'new_images_size_width_error_texterror',            // Error ID
-                            'Please enter a width to '.$images_size_name.' images size',     // Error message
+                            __('Please enter a width to '.$images_size_name.' images size', $this->plugin_name),    // Error message
                             'error'                         // Type of message
                     );
                 }
@@ -234,7 +230,7 @@ class Wp_Cbf_Admin {
                     add_settings_error(
                             'new_images_size_heigth_error',                     // Setting title
                             'new_images_size_heigth_error_texterror',            // Error ID
-                            'Please enter a height to '.$images_size_name.' images sizes',     // Error message
+                            __('Please enter a height to '.$images_size_name.' images sizes', $this->plugin_name),     // Error message
                             'error'                         // Type of message
                     );
                 }
@@ -256,7 +252,8 @@ class Wp_Cbf_Admin {
         $valid['referrer_meta_value'] = sanitize_text_field($input['referrer_meta_value']);
 
         // Admin customizations
-        $valid['login_logo'] = (isset($input['login_logo']) && !empty($input['login_logo'])) ? esc_url($input['login_logo']) : 0;
+        $valid['login_logo_id'] = (isset($input['login_logo_id']) && !empty($input['login_logo_id'])) ? absint($input['login_logo_id']) : 0;
+
         $valid['login_logo_link'] = (isset($input['login_logo_link']) && !empty($input['login_logo_link'])) ? 1 : 0;
 
         $valid['login_background_color'] = (isset($input['login_background_color']) && !empty($input['login_background_color'])) ? sanitize_text_field($input['login_background_color']) : '';
@@ -264,7 +261,7 @@ class Wp_Cbf_Admin {
                 add_settings_error(
                         'login_background_color',                     // Setting title
                         'login_background_color_texterror',            // Error ID
-                        'Please enter a valid hex value color',     // Error message
+                        __('Please enter a valid hex value color', $this->plugin_name),     // Error message
                         'error'                         // Type of message
                 );
             }
@@ -273,13 +270,83 @@ class Wp_Cbf_Admin {
                 add_settings_error(
                         'login_button_primary_color',                     // Setting title
                         'login_button_primary_color_texterror',            // Error ID
-                        'Please enter a valid hex value color',     // Error message
+                        __('Please enter a valid hex value color', $this->plugin_name),     // Error message
                         'error'                         // Type of message
                 );
             }
 
         $valid['remove_admin_bar_icon'] = (isset($input['remove_admin_bar_icon']) && !empty($input['remove_admin_bar_icon'])) ? 1 : 0;
         $valid['admin_footer_text'] = (isset($input['admin_footer_text']) && !empty($input['admin_footer_text'])) ? wp_kses($input['admin_footer_text'], array('a' => array( 'href' => array(), 'title' => array()))) : '';
+
+        // Smtp Support
+        $valid['smtp_support'] = (isset($input['smtp_support']) && !empty($input['smtp_support'])) ? 1 : 0;
+
+        $valid['smtp_from_name'] = (isset($input['smtp_from_name']) && !empty($input['smtp_from_name'])) ? sanitize_text_field($input['smtp_from_name']) : '';
+            if ( empty($valid['smtp_from_name']) ) { 
+                add_settings_error(
+                        'smtp_from_name',                     // Setting title
+                        'smtp_from_name_texterror',            // Error ID
+                        __('Please enter a name', $this->plugin_name),     // Error message
+                        'error'                         // Type of message
+                );
+            }
+        $valid['smtp_from_email'] = (isset($input['smtp_from_email']) && !empty($input['smtp_from_email'])) ? sanitize_text_field($input['smtp_from_email']) : '';
+            if ( !empty($valid['smtp_from_email']) && !preg_match( '/^([a-z0-9_\.-]+\@[\da-z\.-]+\.[a-z\.]{2,6})/i', $valid['smtp_from_email']  ) ) { 
+                add_settings_error(
+                        'smtp_from_email',                     // Setting title
+                        'smtp_from_email_texterror',            // Error ID
+                        __('Please enter a valid email address', $this->plugin_name),     // Error message
+                        'error'                         // Type of message
+                );
+            }
+        $valid['smtp_authentication'] = (isset($input['smtp_authentication']) && !empty($input['smtp_authentication'])) ? 1 : 0;
+
+        $valid['smtp_port'] = (isset($input['smtp_port']) && !empty($input['smtp_port'])) ? sanitize_text_field($input['smtp_port']) : '';
+            if ( !empty($valid['smtp_port']) && !preg_match( '/^[\d]{2,4})/i', $valid['smtp_port']  ) ) { 
+                add_settings_error(
+                        'smtp_port',                     // Setting title
+                        'smtp_port_texterror',            // Error ID
+                        __('Please enter a valid port number', $this->plugin_name),     // Error message
+                        'error'                         // Type of message
+                );
+            }
+
+
+        $valid['smtp_host'] = (isset($input['smtp_host']) && !empty($input['smtp_host'])) ? sanitize_text_field($input['smtp_host']) : '';
+            if ( empty($valid['smtp_host']) ) { 
+                add_settings_error(
+                        'smtp_host',                     // Setting title
+                        'smtp_host_texterror',            // Error ID
+                        __('Please enter a smtp hostname', $this->plugin_name),     // Error message
+                        'error'                         // Type of message
+                );
+            }
+
+
+        $valid['smtp_encryption'] = sanitize_text_field($input['smtp_encryption']);
+
+        $valid['smtp_authentication'] = (isset($input['smtp_authentication']) && !empty($input['smtp_authentication'])) ? 1 : 0;
+
+        $valid['smtp_username'] = (isset($input['smtp_username']) && !empty($input['smtp_username'])) ? sanitize_text_field($input['smtp_username']) : '';
+            if ( empty($valid['smtp_username']) ) { 
+                add_settings_error(
+                        'smtp_username',                     // Setting title
+                        'smtp_username_texterror',            // Error ID
+                        __('Please enter a username', $this->plugin_name),     // Error message
+                        'error'                         // Type of message
+                );
+            }
+
+        
+        $valid['smtp_password'] = (isset($input['smtp_password']) && !empty($input['smtp_password'])) ? sanitize_text_field($input['smtp_password']) : '';
+            if ( empty($valid['smtp_password']) ) { 
+                add_settings_error(
+                        'smtp_password',                     // Setting title
+                        'smtp_password_texterror',            // Error ID
+                        __('Please enter a password', $this->plugin_name),     // Error message
+                        'error'                         // Type of message
+                );
+            }
 
 
 
@@ -315,26 +382,16 @@ class Wp_Cbf_Admin {
 
 
 
-    public function wp_cbf_replace_thickbox_text($translated_text, $text, $domain) {
-        if ('Insert into Post' == $text) {
-            $referer = strpos( wp_get_referer(), 'wp_cbf_upload-settings' );
-            if ( $referer != '' ) {
-                return __('Make this my login logo', $this->plugin_name);
-            }
-        }
-        return $translated_text;
-    }
-
-
-
     /**
      * Admin customizations Functions
      *
      * @since    1.0.0
      */
     private function wp_cbf_login_logo_css(){
-        if(isset($this->wp_cbf_options['login_logo']) && !empty($this->wp_cbf_options['login_logo'])){
-            $login_logo_css  = "body.login h1 a {background-image: url(".$this->wp_cbf_options['login_logo']."); width:253px; height:102px; background-size: contain;}";
+        if(isset($this->wp_cbf_options['login_logo_id']) && !empty($this->wp_cbf_options['login_logo_id'])){
+            $login_logo = wp_get_attachment_image_src($this->wp_cbf_options['login_logo_id'], 'thumbnail');
+            $login_logo_url = $login_logo[0];
+            $login_logo_css  = "body.login h1 a {background-image: url(".$login_logo_url."); width:253px; height:102px; background-size: contain;}";
             return $login_logo_css;
         }
     }
@@ -425,15 +482,15 @@ class Wp_Cbf_Admin {
 
     // Write the actually needed css for admin customizations
     public function wp_cbf_admin_css(){
-        if( !empty($this->wp_cbf_options['login_logo']) || $this->wp_cbf_login_background_color() != null || $this->wp_cbf_login_button_color() != null){
+        if( !empty($this->wp_cbf_options['login_logo_id']) || null != $this->wp_cbf_login_background_color()  || null != $this->wp_cbf_login_button_color() ){
             echo '<style>';
-            if( !empty($this->wp_cbf_options['login_logo'])){
+            if( !empty($this->wp_cbf_options['login_logo_id'])){
                 echo $this->wp_cbf_login_logo_css();
             }
-            if($this->wp_cbf_login_background_color() != null){
+            if( null != $this->wp_cbf_login_background_color() ){
                 echo $this->wp_cbf_login_background_color();
             }
-            if($this->wp_cbf_login_button_color() != null){
+            if( null != $this->wp_cbf_login_button_color() ){
                 echo $this->wp_cbf_login_button_color();
             }
             echo '</style>';
@@ -454,6 +511,74 @@ class Wp_Cbf_Admin {
         return $footer_text;
     }
 
+    /**
+     *
+     * Add smtp email possibilities
+     *
+     */
+
+    function wp_cbf_send_smtp_email( $phpmailer ){
+        if(!empty($this->wp_cbf_options['smtp_support']) && !empty($this->wp_cbf_options['smtp_host']) && !empty($this->wp_cbf_options['smtp_port'])){
+            // Define that we are sending with SMTP
+            $phpmailer->isSMTP();
+
+            // The hostname of the mail server
+            $phpmailer->Host = $this->wp_cbf_options['smtp_host'];
+
+            // Use SMTP authentication (true|false)
+            $phpmailer->SMTPAuth = true;
+
+            // SMTP port number - likely to be 25, 465 or 587
+            $phpmailer->Port = $this->wp_cbf_options['smtp_port'];
+            
+            // Set SMTPDebug to true
+            $phpmailer->SMTPDebug = true;
+
+            if('1' == $this->wp_cbf_options['smtp_authentication']){
+
+                // Username to use for SMTP authentication
+                $phpmailer->Username = $this->wp_cbf_options['smtp_username'];
+
+                // Password to use for SMTP authentication
+                $phpmailer->Password = $this->wp_cbf_options['smtp_password'];
+
+            }
+
+            // The encryption system to use - ssl (deprecated) or tls
+            $phpmailer->SMTPSecure = $this->wp_cbf_options['smtp_encryption'];
+
+            if(!empty($this->wp_cbf_options['smtp_from_email']))
+                $phpmailer->From = $this->wp_cbf_options['smtp_from_email'];
+
+            if(!empty($this->wp_cbf_options['smtp_from_name']))
+                $phpmailer->FromName = $this->wp_cbf_options['smtp_from_name'];
+        }
+    }
+
+
+    // Smtp ajax test email
+    public function wp_cbf_send_test_email_callback(){
+        $email_addr = $_POST['email_addr'];
+        $subject = 'WP Cleanup: ' . __('This is a test mail form WP Cleanup SMTP settings to ', $this->plugin_name) . $email_addr;
+        $message = __('This test email has been successfully sent using your SMTP settings - Congrats!', $this->plugin_name);
+        
+        
+        // Start output buffering to grab smtp debugging output
+        ob_start();
+
+        // Send the test mail
+        $result = wp_mail($email_addr, $subject, $message);
+        
+        // Strip out the language strings which confuse users
+        //unset($phpmailer->language);
+        // This property became protected in WP 3.2
+        
+        // Grab the smtp debugging output
+        $smtp_debug = ob_get_clean();
+        
+        echo json_encode(array('result' => $result, 'debug' => $smtp_debug));
+        wp_die();
+    }
 
 
 

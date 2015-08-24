@@ -18,10 +18,11 @@
 	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 	<h2 class="nav-tab-wrapper">
-	    <a href="#clean-up" class="nav-tab nav-tab-active">Clean up</a>
-	    <a href="#images-settings" class="nav-tab">Images settings</a>
-	     <a href="#privacy-settings" class="nav-tab">Privacy settings</a>
-	    <a href="#admin-custom" class="nav-tab">Admin Customizations</a>
+            <a href="#clean-up" class="nav-tab nav-tab-active"><?php _e('Clean up', $this->plugin_name);?></a>
+            <a href="#images-settings" class="nav-tab"><?php _e('Images settings', $this->plugin_name);?></a>
+            <a href="#privacy-settings" class="nav-tab"><?php _e('Privacy settings', $this->plugin_name);?></a>
+            <a href="#admin-custom" class="nav-tab"><?php _e('Login Customizations', $this->plugin_name);?></a>
+            <a href="#smtp" class="nav-tab"><?php _e('Smtp Settings', $this->plugin_name);?></a>
 	</h2>
 
 	<form method="post" name="cleanup_options" action="options.php">
@@ -30,7 +31,7 @@
 			// * Grab all value if already set
 			// *
 			// */
-			$options = get_option($this->options_slug);
+			$options = get_option($this->plugin_name);
 
 			// Cleanup
 			$cleanup = $options['cleanup'];
@@ -63,17 +64,31 @@
 			$referrer_meta_value = $options['referrer_meta_value'];
 
 			// Admin Customizations
-			$login_logo = $options['login_logo'];
+			$login_logo_id = $options['login_logo_id'];
+                        $login_logo = wp_get_attachment_image_src( $login_logo_id, 'thumbnail');
+                        $login_logo_url = $login_logo[0];
 			$login_logo_link = $options['login_logo_link'];
 			$login_background_color = $options['login_background_color'];
 			$login_button_primary_color = $options['login_button_primary_color'];
 			$remove_admin_bar_icon = $options['remove_admin_bar_icon'];
 			$admin_footer_text  = $options['admin_footer_text'];
+
+                        // Smtp Support
+                        $smtp_support = $options['smtp_support'];
+                        $smtp_from_name = $options['smtp_from_name'];
+                        $smtp_from_email = $options['smtp_from_email'];
+                        $smtp_port = $options['smtp_port'];
+                        $smtp_host = $options['smtp_host'];
+                        $smtp_encryption = $options['smtp_encryption'];
+                        $smtp_authentication = $options['smtp_authentication'];
+                        $smtp_username = $options['smtp_username'];
+                        $smtp_password = $options['smtp_password'];
 			/*
 			* Set up hidden fields
 			*
 			*/
-			settings_fields($this->options_slug);
+			settings_fields($this->plugin_name);
+                        do_settings_sections($this->plugin_name);
 
 
 		 // Include tabs partials
@@ -81,10 +96,11 @@
 			require_once('wp-cbf-images_settings.php');
 			require_once('wp-cbf-privacy_settings.php');
 			require_once('wp-cbf-admin_settings.php');
+			require_once('wp-cbf-smtp.php');
 		?>
 
 		<p class="submit">
-            <?php submit_button('Save all changes', 'primary','submit', TRUE); ?>
+            <?php submit_button(__('Save all changes', $this->plugin_name), 'primary','submit', TRUE); ?>
         </p>
 
     </form>

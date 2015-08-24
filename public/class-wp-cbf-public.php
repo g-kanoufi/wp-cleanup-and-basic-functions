@@ -47,13 +47,11 @@ class Wp_Cbf_Public {
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version, $options_slug, $options_data ) {
+	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		$this->options_slug = $options_slug;
-		$this->options_data = $options_data;
-		$this->wp_cbf_options = get_option($this->options_slug);
+		$this->wp_cbf_options = get_option($this->plugin_name);
 
 
 	}
@@ -67,7 +65,7 @@ class Wp_Cbf_Public {
 	// Cleanup head
 	public function wp_cbf_cleanup() {
 
-		if($this->wp_cbf_options['cleanup']){
+		if(!empty($this->wp_cbf_options['cleanup'])){
 
 
 			remove_action( 'wp_head', 'rsd_link' );                 // RSD link
@@ -235,7 +233,7 @@ class Wp_Cbf_Public {
 				add_shortcode( 'wp_caption', 'wp_cbf_fixed_img_caption_shortcode' );
 				add_shortcode( 'caption', 'wp_cbf_fixed_img_caption_shortcode' );
 				function wp_cbf_fixed_img_caption_shortcode($attr, $content = null) {
-					if ( ! isset( $attr['caption'] ) ) {
+					if ( !isset( $attr['caption'] ) ) {
 						if ( preg_match( '#((?:<a [^>]+>\s*)?<img [^>]+>(?:\s*</a>)?)(.*)#is', $content, $matches ) ) {
 						    $content = $matches[1];
 						    $attr['caption'] = trim( $matches[2] );
@@ -402,7 +400,7 @@ class Wp_Cbf_Public {
 
 	//Add gallery image size to default gallery
 	public function wp_cbf_gallery_image_size( $output, $attr ) {
-		if($this->wp_cbf_options['gallery_images_size'] != null){
+		if(null != $this->wp_cbf_options['gallery_images_size']){
 			extract(shortcode_atts(array(
 				'size' => $this->wp_cbf_options['gallery_images_size'],
 			), $attr));

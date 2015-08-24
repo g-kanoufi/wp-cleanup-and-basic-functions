@@ -93,45 +93,6 @@ class Wp_Cbf {
 		$this->plugin_name = 'wp-cbf';
 		$this->version = '1.0.0';
 		$this->plugin_screen_hook_suffix = null;
-		$this->options_slug ='wp_cbf_options';
-		$this->options_data = array(
-			// Cleanup
-			'cleanup' => 0,
-			'comment_css_cleanup' => 0,
-			'gallery_css_cleanup' => 0,
-			'body_class_slug' => 0,
-			'prettify_search' => 0,
-			'css_js_versions' => 0,
-			'jquery_cdn' => 0,
-	                           'cdn_provider' => '',
-			'hide_admin_bar' => 0,
-			'write_log_fn' => 0,
-
-			// Images
-			'images_figure_wrap' => 0,
-			'inline_wp_caption' => 0,
-			'images_attributes' => 0,
-			'images_wh' => 0,
-			'svg_support' => 0,
-			'retina_support' => 0,
-			'add_retina_js' => 0,
-			'new_images_size' => 0,
-			'images_size_arr' => array(),
-			'gallery_images_size' => null,
-
-			// Privacy
-			'referrer_meta' => 0,
-			'referrer_meta_value' => 'no-referrer',
-
-			// Admin customizations
-			'login_logo' =>  '',
-			'login_logo_link' => 0,
-			'login_background_color' => '#fff',
-			'login_button_primary_color' => '#00A0D2',
-			'remove_admin_bar_icon' => 0,
-			'admin_footer_text' => '',
-		);
-
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
@@ -211,7 +172,7 @@ class Wp_Cbf {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Wp_Cbf_Admin( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_options_slug(), $this->get_plugin_options_data());
+		$plugin_admin = new Wp_Cbf_Admin( $this->get_plugin_name(), $this->get_version()) ;
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -220,8 +181,8 @@ class Wp_Cbf {
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'options_update');
 
 		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_name . '.php' );
+                //write_log($plugin_basename);
 		$this->loader->add_filter( 'plugin_action_links_' . $plugin_basename, $plugin_admin, 'add_action_links' );
-		$this->loader->add_filter( 'gettext', $plugin_admin, 'wp_cbf_replace_thickbox_text' , 1, 3 );
 
 
 		// Images / Media Uploader
@@ -236,6 +197,9 @@ class Wp_Cbf {
 		$this->loader->add_filter( 'wp_before_admin_bar_render', $plugin_admin, 'wp_cbf_remove_wp_icon_from_admin_bar');
 		$this->loader->add_filter( 'admin_footer_text', $plugin_admin, 'wp_cbf_admin_footer_text');
 
+                // Smtp support
+                $this->loader->add_action('phpmailer_init',$plugin_admin, 'wp_cbf_send_smtp_email');
+                $this->loader->add_action('wp_ajax_wp_cbf_send_test_email', $plugin_admin, 'wp_cbf_send_test_email_callback');
 
 
 
@@ -251,7 +215,7 @@ class Wp_Cbf {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Wp_Cbf_Public( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_options_slug(), $this->get_plugin_options_data() );
+		$plugin_public = new Wp_Cbf_Public( $this->get_plugin_name(), $this->get_version());
 
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		// $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -287,6 +251,8 @@ class Wp_Cbf {
 		// Privacy
 		$this->loader->add_action('wp_head', $plugin_public, 'wp_cbf_referrer_meta', 1);
 
+                // SMTP
+
 
 	}
 
@@ -310,28 +276,7 @@ class Wp_Cbf {
 		return $this->plugin_name;
 	}
 
-	/**
-	 * Return the plugin options slug.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @return    Plugin slug variable.
-	 */
-	public function get_plugin_options_slug() {
-		return $this->options_slug;
-	}
-
-
-	/**
-	 * Return the plugin options default data.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @return    Plugin options variable.
-	 */
-	public function get_plugin_options_data() {
-		return $this->options_data;
-	}
+	
 
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
