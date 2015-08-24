@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP Cleanup and Basic Options Functions\n"
 "POT-Creation-Date: 2015-08-24 20:17-0000\n"
-"PO-Revision-Date: 2015-08-24 20:36-0000\n"
+"PO-Revision-Date: 2015-08-24 20:20-0000\n"
 "Last-Translator: Guillaume Kanoufi <guillaume@lostwebdesigns.com>\n"
 "Language-Team: Guillaume Kanoufi <guillaume@lostwebdesigns.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,62 +14,60 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: es\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: admin/class-wp-cbf-admin.php:125
 msgid "WP Cleanup and Base Options Functions Setup"
-msgstr "WP Cleanup y configuración de funciones de Base"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:149
 msgid "Settings"
-msgstr "Configuracions"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:213
 msgid "Please enter a new images size name"
-msgstr "Por favor, introduzca un nuevo nombre de tamaño de imágenes"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:223
 msgid "Please enter a width to "
-msgstr "Por favor introduzca una anchura "
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:233
 msgid "Please enter a height to "
-msgstr "Por favor introduzca una altura "
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:264 admin/class-wp-cbf-admin.php:273
 msgid "Please enter a valid hex value color"
-msgstr "Introduce un color con valor hexadecimal válido"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:289
 msgid "Please enter a name"
-msgstr "Por favor, introduzca su nombre"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:298
 msgid "Please enter a valid email address"
-msgstr "Por favor introduzca una dirección de correo válida"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:309
 msgid "Please enter a valid port number"
-msgstr "Por favor, introduzca un número válido."
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:320
 msgid "Please enter a smtp hostname"
-msgstr "Por favor ingrese un nombre de host smtp"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:335
 msgid "Please enter a username"
-msgstr "Por favor ingrese un nombre de usuario"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:346
 msgid "Please enter a password"
-msgstr "Por favor, introduzca una contraseña"
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:562
 msgid "This is a test mail form WP Cleanup SMTP settings to "
-msgstr "Esto es un correo de prueba mandado desde WP Cleanup "
+msgstr ""
 
 #: admin/class-wp-cbf-admin.php:563
 msgid ""
@@ -219,7 +217,7 @@ msgstr ""
 
 #: admin/partials/wp-cbf-cleanup_settings.php:91
 msgid "Hide Admin Bar on the Front-end"
-msgstr "Ocultar barra de Admin en el front-end"
+msgstr ""
 
 #: admin/partials/wp-cbf-cleanup_settings.php:94
 msgid "Hide Admin Bar"
@@ -354,25 +352,23 @@ msgstr ""
 
 #: admin/partials/wp-cbf-privacy_settings.php:29
 msgid "W3C page about Referrer meta tag"
-msgstr "Página de la W3C sobre el meta tag Referrer"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:19
 msgid "Set up SMTP email"
-msgstr "Configurar correo SMTP"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:20
 msgid "Update wp_mail() function to send emails with SMTP protocol"
 msgstr ""
-"Actualización de la funciòn wp_mail() para enviar mensajes de correo "
-"electrónico con protocolo SMTP"
 
 #: admin/partials/wp-cbf-smtp.php:24
 msgid "Allow SMTP support"
-msgstr "Permitir la compatibilidad de SMTP"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:27
 msgid "Allow SMTP Support"
-msgstr "Permitir la compatibilidad de SMTP"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:31
 msgid ""
@@ -382,84 +378,77 @@ msgid ""
 "\">Mandrill</a> or <a href=\"https://sendgrid.com/\" rel=\"nofollow"
 "\">SendGrid</a>"
 msgstr ""
-"Utilizando SMTP podrás enviar todos los correos de WordPress con tu propia "
-"dirección de correo electrónico, puede configurarlo con tu cuenta google o "
-"crear una cuenta gratuita con <a href=\"https://www.mandrill.com/\" rel="
-"\"nofollow\">mandril</a> o <a href=\"https://sendgrid.com/\" rel=\"nofollow"
-"\">SendGrid</a>"
 
 #: admin/partials/wp-cbf-smtp.php:32
 msgid "From Name"
-msgstr "De Nombre"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:33
 msgid "John Doe"
-msgstr "Juan Español"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:37
 msgid "From Email"
-msgstr "Desde Email"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:42
 msgid ""
 "SMTP Options - you will be able to send a test email once all those options "
 "will be set and saved"
 msgstr ""
-"Opciones de SMTP - usted podrá enviar un correo electrónico de prueba una "
-"vez que se establece y se guardarán todas las opciones"
 
 #: admin/partials/wp-cbf-smtp.php:43 admin/partials/wp-cbf-smtp.php:44
 msgid "SMTP Host"
-msgstr "Nombre del servidor SMTP"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:45
 msgid "ex:smtp.gmail.com"
-msgstr "ex:smtp.gmail.com"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:49
 msgid "SMTP port"
-msgstr "Simple Mail Transfer Protocol"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:50
 msgid "SMTP Port"
-msgstr "SMTP Port"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:55
 msgid "Encryption"
-msgstr "Cifrado"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:56
 msgid "Use Encryption"
-msgstr "Utilizar cifrado"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:65 admin/partials/wp-cbf-smtp.php:68
 msgid "Use authentication - Recommended"
-msgstr "Usar autenticación - recomendado"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:73
 msgid "SMTP Username"
-msgstr "Nombre de usuario SMTP"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:74
 msgid "j.doe@gmail.com"
-msgstr "j.espanol@gmail.com"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:78
 msgid "SMTP Password"
-msgstr "Contraseña SMTP"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:82
 msgid "Show"
-msgstr "Mostrar"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:92
 msgid "Email to send test to"
-msgstr "Correo electrónico para enviar la prueba a"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:95
 msgid "Send test email"
-msgstr "Enviar correo electrónico de prueba"
+msgstr ""
 
 #: admin/partials/wp-cbf-smtp.php:99
 msgid "View SMTP debug log"
-msgstr "Ver registro de depuración SMTP"
+msgstr ""

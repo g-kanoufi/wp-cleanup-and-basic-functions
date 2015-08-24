@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Cleanup and base Functions\n"
-"POT-Creation-Date: 2015-07-01 00:04-0000\n"
-"PO-Revision-Date: 2015-07-01 00:25-0000\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2015-08-24 20:15-0000\n"
+"PO-Revision-Date: 2015-08-24 20:20-0000\n"
+"Last-Translator: Guillaume Kanoufi <guillaume@lostwebdesigns.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -13,23 +13,108 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/class-wp-cbf-admin.php:153
+#: admin/class-wp-cbf-admin.php:125
+msgid "WP Cleanup and Base Options Functions Setup"
+msgstr "Nettoyage et les fonctionnalités de base"
+
+#: admin/class-wp-cbf-admin.php:149
 msgid "Settings"
 msgstr "Paramètres"
 
-#: admin/class-wp-cbf-admin.php:286
-msgid "Make this my login logo"
-msgstr "En faire mon logo de page de connection"
+#: admin/class-wp-cbf-admin.php:213
+msgid "Please enter a new images size name"
+msgstr "Nouveau nom de taille d'Images"
+
+#: admin/class-wp-cbf-admin.php:223
+msgid "Please enter a width to "
+msgstr "Veuillez entrer une largeur "
+
+#: admin/class-wp-cbf-admin.php:233
+msgid "Please enter a height to "
+msgstr "Veuillez saisir une hauteur "
+
+#: admin/class-wp-cbf-admin.php:264 admin/class-wp-cbf-admin.php:273
+msgid "Please enter a valid hex value color"
+msgstr "Veuillez entrer une couleur valeur hexadécimale valide"
+
+#: admin/class-wp-cbf-admin.php:289
+msgid "Please enter a name"
+msgstr "Veuillez saisir un nom"
+
+#: admin/class-wp-cbf-admin.php:298
+msgid "Please enter a valid email address"
+msgstr "Veuillez entrer une adresse e-mail valide"
+
+#: admin/class-wp-cbf-admin.php:309
+msgid "Please enter a valid port number"
+msgstr "Merci d'entrer un numéro de port valide."
+
+#: admin/class-wp-cbf-admin.php:320
+msgid "Please enter a smtp hostname"
+msgstr "Veuillez entrer un nom d'hôte smtp"
+
+#: admin/class-wp-cbf-admin.php:335
+msgid "Please enter a username"
+msgstr "Nom d'utilisateur"
+
+#: admin/class-wp-cbf-admin.php:346
+msgid "Please enter a password"
+msgstr "Veuillez saisir un mot de passe"
+
+#: admin/class-wp-cbf-admin.php:562
+msgid "This is a test mail form WP Cleanup SMTP settings to "
+msgstr ""
+"Ceci est un email de test envoyé depuis les paramètres SMTP de WP Cleanup "
+
+#: admin/class-wp-cbf-admin.php:563
+msgid ""
+"This test email has been successfully sent using your SMTP settings - "
+"Congrats!"
+msgstr ""
+"Cet email de test a été envoyé avec succès à l'aide de vos paramètres SMTP - "
+"félicitations !"
+
+#: admin/partials/wp-cbf-admin-display.php:21
+msgid "Clean up"
+msgstr "Nettoyage"
+
+#: admin/partials/wp-cbf-admin-display.php:22
+msgid "Images settings"
+msgstr "Réglages des images"
+
+#: admin/partials/wp-cbf-admin-display.php:23
+msgid "Privacy settings"
+msgstr "Paramètres de confidentialité"
+
+#: admin/partials/wp-cbf-admin-display.php:24
+msgid "Login Customizations"
+msgstr "Personnalisations de la page de connexion"
+
+#: admin/partials/wp-cbf-admin-display.php:25
+msgid "Smtp Settings"
+msgstr "Réglages SMTP"
+
+#: admin/partials/wp-cbf-admin-display.php:103
+msgid "Save all changes"
+msgstr "Enregistrer les modifications"
 
 #: admin/partials/wp-cbf-admin_settings.php:18
-msgid "Customize the admin"
-msgstr "Personnaliser l'admin"
+msgid "Customize the login page and the admin"
+msgstr "Personnaliser l'admin et la page de login"
+
+#: admin/partials/wp-cbf-admin_settings.php:19
+msgid ""
+"Add logo to login form change buttons color, disable admin bar on front-end, "
+"etc..."
+msgstr ""
+"Ajoutez un  logo à la page de connexion, changer la couleur des boutons, "
+"désactiver la barre d'admin dans le front-end, etc...."
 
 #: admin/partials/wp-cbf-admin_settings.php:23
 #: admin/partials/wp-cbf-admin_settings.php:27
@@ -75,14 +160,20 @@ msgstr "Thème créé pour votre entreprise géniale"
 msgid "Cleanup and basic functionalities"
 msgstr "Nettoyage et les fonctionnalités de base"
 
+#: admin/partials/wp-cbf-cleanup_settings.php:22
+msgid "Clean WordPress head section"
+msgstr "Nettoyer la section head de votre site WordPress"
+
 #: admin/partials/wp-cbf-cleanup_settings.php:25
 msgid "Clean up the head section"
 msgstr "Nettoyer la section head"
 
+#: admin/partials/wp-cbf-cleanup_settings.php:31
 #: admin/partials/wp-cbf-cleanup_settings.php:34
 msgid "Remove Injected CSS for comment widget"
 msgstr "Enlever le CSS injecté par le widget de commentaires"
 
+#: admin/partials/wp-cbf-cleanup_settings.php:40
 #: admin/partials/wp-cbf-cleanup_settings.php:43
 msgid "Remove Injected CSS for galleries"
 msgstr "Enlever le CSS injecté par les galeries"
@@ -122,15 +213,36 @@ msgstr "Charger jQuery depuis un CDN au lieu du script de base de wordpress"
 msgid "Load jQuery from CDN"
 msgstr "Charger jQuery depuis un CDN"
 
-#: admin/partials/wp-cbf-cleanup_settings.php:86
+#: admin/partials/wp-cbf-cleanup_settings.php:83
+msgid ""
+"You can choose your own cdn provider and jQuery version(default will be "
+"Google Cdn and version 1.11.1)-Recommended CDN are <a href=\"https://cdnjs."
+"com/libraries/jquery\">CDNjs</a>, <a href=\"https://code.jquery.com/jquery/"
+"\">jQuery official CDN</a>, <a href=\"https://developers.google.com/speed/"
+"libraries/#jquery\">Google CDN</a> and <a href=\"http://www.asp.net/ajax/"
+"cdn#jQuery_Releases_on_the_CDN_0\">Microsoft CDN</a>"
+msgstr ""
+"Vous pouvez choisir votre propre fournisseur cdn pour jQuery ainsi que sa "
+"version ( par défaut: Google Cdn et version 1.11.1) - Les CDN recommandés "
+"sont <a href=\"https://cdnjs.com/libraries/jquery\">CDNjs</a>, <a href="
+"\"https://code.jquery.com/jquery/\">jQuery officiel CAN</a>, <a href="
+"\"https://developers.google.com/speed/libraries/#jquery\">Google CDN</a> et "
+"<a href=\"http://www.asp.net/ajax/"
+"cdn#jQuery_Releases_on_the_CDN_0\">Microsoft CDN</a>"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:84
+msgid "Choose your prefered cdn provider"
+msgstr "Choisissez votre fournisseur préféré de cdn"
+
+#: admin/partials/wp-cbf-cleanup_settings.php:91
 msgid "Hide Admin Bar on the Front-end"
 msgstr "Cacher la barre d'administrateur sur les pages frontend de votre site"
 
-#: admin/partials/wp-cbf-cleanup_settings.php:89
+#: admin/partials/wp-cbf-cleanup_settings.php:94
 msgid "Hide Admin Bar"
 msgstr "Cacher la barre d'administration"
 
-#: admin/partials/wp-cbf-cleanup_settings.php:94
+#: admin/partials/wp-cbf-cleanup_settings.php:99
 msgid ""
 "Create write_log() function to log errors in debug.log file (WP_DEBUG_LOG "
 "must be set to true)"
@@ -138,7 +250,7 @@ msgstr ""
 "Créer la fonction write_log() pour enregistrer les erreurs dans le fichier "
 "debug.log (WP_DEBUG_LOG doit avoir la valeur true)"
 
-#: admin/partials/wp-cbf-cleanup_settings.php:97
+#: admin/partials/wp-cbf-cleanup_settings.php:102
 msgid ""
 "Create write_log() function to log errors in debug.log file , note: "
 "WP_DEBUG_LOG must be set to true. Use it as follow: write_log(\"your debug "
@@ -148,9 +260,22 @@ msgstr ""
 "debug.log, note: WP_DEBUG_LOG doit avoir la valeur true. Utiliser comme "
 "suit: write_log(\"your debug message\")"
 
+#: admin/partials/wp-cbf-cleanup_settings.php:108
+#: admin/partials/wp-cbf-cleanup_settings.php:111
+msgid "Get rid of YOAST SEO plugin comments in head"
+msgstr "Se débarrasser des commentaires du plugin SEO YOAST dans le head"
+
 #: admin/partials/wp-cbf-images_settings.php:18
 msgid "Images specific functionalities"
 msgstr "Fonctionnalités spécifiques aux images"
+
+#: admin/partials/wp-cbf-images_settings.php:19
+msgid ""
+"Clean up images and captions markup but also add images sizes and create "
+"retina ready images on upload"
+msgstr ""
+"Nettoyer les balises images et légendes mais aussi ajouter des tailles d' "
+"images et créer des images prêtes pour les retina displays"
 
 #: admin/partials/wp-cbf-images_settings.php:23
 msgid "Wrap images in figure tags"
@@ -185,44 +310,57 @@ msgstr "Retirer la largeur et la hauteur dans l'éditeur"
 
 #: admin/partials/wp-cbf-images_settings.php:59
 #: admin/partials/wp-cbf-images_settings.php:62
+msgid ""
+"Add svg upload capability to the Media Uploader (Thumbnail in list and grid "
+"won't show, but it's there)"
+msgstr ""
+"Ajouter la fonctionnalité de téléchargement d'images svg (les vignettes dans "
+"la liste et la grille n'apparaîtront pas, mais elle seront bien là)"
+
+#: admin/partials/wp-cbf-images_settings.php:68
+#: admin/partials/wp-cbf-images_settings.php:71
 msgid "Add retina support"
 msgstr "Ajouter le support d'images retina"
 
-#: admin/partials/wp-cbf-images_settings.php:65
+#: admin/partials/wp-cbf-images_settings.php:74
 msgid "Add retina js script to front end"
 msgstr "Ajouter le script retina js à votre site web"
 
-#: admin/partials/wp-cbf-images_settings.php:68
+#: admin/partials/wp-cbf-images_settings.php:77
 msgid "Add retina js script to front-end"
 msgstr "Ajouter le script retina js à votre site web"
 
-#: admin/partials/wp-cbf-images_settings.php:80
+#: admin/partials/wp-cbf-images_settings.php:89
 msgid ""
 "Add your new images size with desired width, height and hard cropping option"
 msgstr ""
 "Ajouter votre nouvelle taille des images avec la largeur, la hauteur, et "
 "l'option de rognage désirées"
 
-#: admin/partials/wp-cbf-images_settings.php:81
+#: admin/partials/wp-cbf-images_settings.php:90
 msgid "Add New Image sizes"
 msgstr "Ajouter de nouvelles tailles d'images"
 
-#: admin/partials/wp-cbf-images_settings.php:84
+#: admin/partials/wp-cbf-images_settings.php:93
 msgid "Add New Image size"
 msgstr "Ajouter une nouvelle taille d'image"
 
-#: admin/partials/wp-cbf-images_settings.php:89
+#: admin/partials/wp-cbf-images_settings.php:98
 msgid "New Images size name"
 msgstr "Nouveau nom de taille d'Images"
 
-#: admin/partials/wp-cbf-images_settings.php:99
-#: admin/partials/wp-cbf-images_settings.php:135
+#: admin/partials/wp-cbf-images_settings.php:108
+#: admin/partials/wp-cbf-images_settings.php:145
 msgid ""
 "Crop thumbnail to exact dimensions (normally thumbnails are proportional)"
 msgstr "Rogner l'image aux dimensions exactes ?"
 
-#: admin/partials/wp-cbf-images_settings.php:145
-#: admin/partials/wp-cbf-images_settings.php:146
+#: admin/partials/wp-cbf-images_settings.php:112
+msgid "Already Existing Images sizes"
+msgstr "Tailles d'images déjà présentes"
+
+#: admin/partials/wp-cbf-images_settings.php:156
+#: admin/partials/wp-cbf-images_settings.php:157
 msgid "Add one of images sizes to default gallery"
 msgstr "Ajoutez l'un des formats d'images par default au shortcode Galerie"
 
@@ -249,3 +387,115 @@ msgstr ""
 #: admin/partials/wp-cbf-privacy_settings.php:29
 msgid "W3C page about Referrer meta tag"
 msgstr "Page du W3C sur la balise meta Referrer"
+
+#: admin/partials/wp-cbf-smtp.php:19
+msgid "Set up SMTP email"
+msgstr "Mettre en place l'envoi d'emails avec SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:20
+msgid "Update wp_mail() function to send emails with SMTP protocol"
+msgstr ""
+"Mise à jour de la fonction wp_mail() pour envoyer des emails avec le "
+"protocole SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:24
+msgid "Allow SMTP support"
+msgstr "Ajouter le support pour SMTP emails"
+
+#: admin/partials/wp-cbf-smtp.php:27
+msgid "Allow SMTP Support"
+msgstr "Ajouter le support pour SMTP emails"
+
+#: admin/partials/wp-cbf-smtp.php:31
+msgid ""
+"Using SMTP you will be able to send all WordPress emails with your own email "
+"address, you can set this up with your google smtp credentials or create a "
+"free account with <a href=\"https://www.mandrill.com/\" rel=\"nofollow"
+"\">Mandrill</a> or <a href=\"https://sendgrid.com/\" rel=\"nofollow"
+"\">SendGrid</a>"
+msgstr ""
+"À l'aide de SMTP, vous serez en mesure d'envoyer tous les emails de "
+"WordPress avec votre propre adresse e-mail, vous pouvez mettre celà en place "
+"avec votre email google et ses informations d'identification smtp ou créer "
+"un compte gratuit sur <a href=\"https://www.mandrill.com/\" rel=\"nofollow"
+"\">Mandrill</a> ou <a href=\"https://sendgrid.com/\" rel=\"nofollow"
+"\">SendGrid</a>"
+
+#: admin/partials/wp-cbf-smtp.php:32
+msgid "From Name"
+msgstr "De Nom"
+
+#: admin/partials/wp-cbf-smtp.php:33
+msgid "John Doe"
+msgstr "Jean Dupont"
+
+#: admin/partials/wp-cbf-smtp.php:37
+msgid "From Email"
+msgstr "De l'email"
+
+#: admin/partials/wp-cbf-smtp.php:42
+msgid ""
+"SMTP Options - you will be able to send a test email once all those options "
+"will be set and saved"
+msgstr ""
+"Options de SMTP - vous serez en mesure d'envoyer un email de test une fois "
+"que toutes ces options seront entrées et sauvées"
+
+#: admin/partials/wp-cbf-smtp.php:43 admin/partials/wp-cbf-smtp.php:44
+msgid "SMTP Host"
+msgstr "Hôte SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:45
+msgid "ex:smtp.gmail.com"
+msgstr "ex:smtp.gmail.com"
+
+#: admin/partials/wp-cbf-smtp.php:49
+msgid "SMTP port"
+msgstr "Port SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:50
+msgid "SMTP Port"
+msgstr "Port SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:55
+msgid "Encryption"
+msgstr "Cryptage"
+
+#: admin/partials/wp-cbf-smtp.php:56
+msgid "Use Encryption"
+msgstr "Utiliser un cryptage"
+
+#: admin/partials/wp-cbf-smtp.php:65 admin/partials/wp-cbf-smtp.php:68
+msgid "Use authentication - Recommended"
+msgstr "Utiliser l'authentification - recommandé"
+
+#: admin/partials/wp-cbf-smtp.php:73
+msgid "SMTP Username"
+msgstr "Nom d'utilisateur SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:74
+msgid "j.doe@gmail.com"
+msgstr "j.dupont@gmail.com"
+
+#: admin/partials/wp-cbf-smtp.php:78
+msgid "SMTP Password"
+msgstr "Mot de passe SMTP"
+
+#: admin/partials/wp-cbf-smtp.php:82
+msgid "Show"
+msgstr "Afficher"
+
+#: admin/partials/wp-cbf-smtp.php:92
+msgid "Email to send test to"
+msgstr "Envoyer un email de test à"
+
+#: admin/partials/wp-cbf-smtp.php:95
+msgid "Send test email"
+msgstr "Envoyer un email de test"
+
+#: admin/partials/wp-cbf-smtp.php:99
+msgid "View SMTP debug log"
+msgstr "Voir le journal de débogage SMTP"
+
+#~ msgid "Make this my login logo"
+#~ msgstr "En faire mon logo de page de connection"
