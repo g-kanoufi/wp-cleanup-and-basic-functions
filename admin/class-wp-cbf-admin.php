@@ -302,7 +302,7 @@ class Wp_Cbf_Admin {
         $valid['smtp_authentication'] = (isset($input['smtp_authentication']) && !empty($input['smtp_authentication'])) ? 1 : 0;
 
         $valid['smtp_port'] = (isset($input['smtp_port']) && !empty($input['smtp_port'])) ? sanitize_text_field($input['smtp_port']) : '';
-            if ( !empty($input['smtp_support']) && !empty($valid['smtp_port']) && !preg_match( '/^[\d]{2,4})/i', $valid['smtp_port']  ) ) { 
+            if ( !empty($input['smtp_support']) && !empty($valid['smtp_port']) && !preg_match( '/[\d]{2,4})/i', $valid['smtp_port']  ) ) { 
                 add_settings_error(
                         'smtp_port',                     // Setting title
                         'smtp_port_texterror',            // Error ID
@@ -532,7 +532,7 @@ class Wp_Cbf_Admin {
             $phpmailer->Port = $this->wp_cbf_options['smtp_port'];
             
             // Set SMTPDebug to true
-            $phpmailer->SMTPDebug = true;
+            //$phpmailer->SMTPDebug = true;
 
             if('1' == $this->wp_cbf_options['smtp_authentication']){
 
@@ -576,7 +576,7 @@ class Wp_Cbf_Admin {
         // Grab the smtp debugging output
         $smtp_debug = ob_get_clean();
         
-        echo json_encode(array('result' => $result, 'debug' => $smtp_debug));
+        echo json_encode(array('result' => $resulti));
         wp_die();
     }
 

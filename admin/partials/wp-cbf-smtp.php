@@ -96,8 +96,8 @@
                             </button>
                             <div class="smtp-ajax-results hidden">
                                 <p class="smtp-results-content updated"></p>
-                                <button class="button"><?php _e('View SMTP debug log', $this->plugin_name);?></button>    
-                                <div class="smtp-results-debug hidden"></div>
+                                <!--button class="button"><?php _e('View SMTP debug log', $this->plugin_name);?></button>    
+                                <div class="smtp-results-debug hidden"></div-->
                             </div>
                        </fieldset> 
                         
