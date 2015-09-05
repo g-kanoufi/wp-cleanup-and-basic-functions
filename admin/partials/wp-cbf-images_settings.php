@@ -45,8 +45,8 @@
 		</label>
 	</fieldset>
 
-	<!-- remove width and height in editor -->
-	<fieldset>
+	<!-- remove width and height in editor - Break editor add media - Removed -->
+	<!-- fieldset>
 		<legend class="screen-reader-text"><span><?php _e('Remove width and height in editor for better respoonsive images', $this->plugin_name);?></span></legend>
 		<label for="<?php echo $this->plugin_name;?>-images_wh">
 			<input type="checkbox" id="<?php echo $this->plugin_name;?>-images_wh" name="<?php echo $this->plugin_name;?>[images_wh]" value="1" <?php checked($images_wh, 1);?>/>
