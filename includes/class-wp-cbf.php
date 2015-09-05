@@ -91,7 +91,7 @@ class Wp_Cbf {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-cbf';
-		$this->version = '1.0.0';
+		$this->version = '2.0.2';
 		$this->plugin_screen_hook_suffix = null;
 		$this->load_dependencies();
 		$this->set_locale();
@@ -241,7 +241,7 @@ class Wp_Cbf {
 		$this->loader->add_action( 'after_setup_theme', $plugin_public, 'wp_cbf_add_images_size' );
 
 		$this->loader->add_filter('the_content', $plugin_public, 'wp_cbf_img_unautop_figure');
-		$this->loader->add_filter( 'get_image_tag', $plugin_public, 'wp_cbf_image_editor', 10, 4 );
+		// Breaks add media in post - Removed - $this->loader->add_filter( 'get_image_tag', $plugin_public, 'wp_cbf_image_editor', 0, 4 );
 		$this->loader->add_filter( 'get_image_tag_class', $plugin_public, 'wp_cbf_image_tag_class', 10, 4 );
 		$this->loader->add_filter( 'wp_generate_attachment_metadata', $plugin_public, 'wp_cbf_retina_support_attachment_meta', 10, 2);
 		$this->loader->add_filter( 'delete_attachment', $plugin_public, 'wp_cbf_delete_retina_support_images' );

@@ -273,24 +273,24 @@ class Wp_Cbf_Public {
 	}
 
 
-	// Remove width and height in editor, for a better responsive world.
-	public function wp_cbf_image_editor($html, $id, $alt, $title) {
-		if(!empty($this->wp_cbf_options['images_wh'])){
-			return preg_replace(
-			array(
-			             '/\s+width="\d+"/i',
-			             '/\s+height="\d+"/i',
-			             '/alt=""/i',
-			),
-			array(
-			             '',
-				'',
-				'',
-				'alt="' . $title . '"',
-			),
-			$html);
-		}
-	}
+	// Break add media in post editor - Removed - Remove width and height in editor, for a better responsive world.
+	/*public function wp_cbf_image_editor($html, $id, $alt, $title) {*/
+		//if(!empty($this->wp_cbf_options['images_wh'])){
+			//return preg_replace(
+			//array(
+				     //'/\s+width="\d+"/i',
+				     //'/\s+height="\d+"/i',
+				     //'/alt=""/i',
+			//),
+			//array(
+				     //'',
+				//'',
+				//'',
+				//'alt="' . $title . '"',
+			//),
+			//$html);
+		//}
+	/*}*/
 
 
 

@@ -11,7 +11,7 @@ WP Cleanup and Basic Functions
   
 **Tested up to:** 4.3
   
-**Stable tag:** 2.0.1
+**Stable tag:** 2.0.2
   
 **License:** GPLv2 or later
   
@@ -91,6 +91,9 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 ## Changelog ##
 
+### 2.0.2 ###
+Removed get rid of width and height in editor as it was breaking the "Add media" in post.
+
 ### 2.0.1 ### 
 Fixed a saving small bug
 
@@ -111,6 +114,9 @@ Fixed some notice error making all checkboxes checked on first save and added po
 Initial Release
 
 ## Upgrade Notice ##
+
+### 2.0.2 ###
+Make sure to update if you are having issues with the "Add media" in post editor.
 
 ### 2.0 ###
 Major refactor of the plugin, all code have been cleaned, also thickbox for Media upload has been changed with wp.media || Warning you might have to reset your login logo
