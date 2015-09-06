@@ -91,7 +91,7 @@ class Wp_Cbf {
 	public function __construct() {
 
 		$this->plugin_name = 'wp-cbf';
-		$this->version = '2.0.2';
+		$this->version = '2.1.0';
 		$this->plugin_screen_hook_suffix = null;
 		$this->load_dependencies();
 		$this->set_locale();

@@ -11,7 +11,7 @@ WP Cleanup and Basic Functions
   
 **Tested up to:** 4.3
   
-**Stable tag:** 2.0.2
+**Stable tag:** 2.1.0
   
 **License:** GPLv2 or later
   
@@ -91,7 +91,7 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 ## Changelog ##
 
-### 2.0.2 ###
+### 2.1.0 ###
 Removed get rid of width and height in editor as it was breaking the "Add media" in post.
 
 ### 2.0.1 ### 
@@ -115,7 +115,7 @@ Initial Release
 
 ## Upgrade Notice ##
 
-### 2.0.2 ###
+### 2.1.0 ###
 Make sure to update if you are having issues with the "Add media" in post editor.
 
 ### 2.0 ###
