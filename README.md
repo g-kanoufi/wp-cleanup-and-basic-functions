@@ -11,7 +11,7 @@ WP Cleanup and Basic Functions
   
 **Tested up to:** 4.3
   
-**Stable tag:** 2.1.0
+**Stable tag:** 2.1.1
   
 **License:** GPLv2 or later
   
@@ -90,6 +90,9 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 
 ## Changelog ##
+
+### 2.1.1 ###
+Fixed a typo in the smtp port regex validation causing an error
 
 ### 2.1.0 ###
 Removed get rid of width and height in editor as it was breaking the "Add media" in post.
