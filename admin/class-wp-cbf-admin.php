@@ -274,9 +274,20 @@ class Wp_Cbf_Admin {
                         'error'                         // Type of message
                 );
             }
+      
 
         $valid['remove_admin_bar_icon'] = (isset($input['remove_admin_bar_icon']) && !empty($input['remove_admin_bar_icon'])) ? 1 : 0;
+
+        $menu_item_arr = array();
+        foreach($input['admin_menu_items'] as $menu_item_key => $menu_item_val){
+          //$menu_item_arr[$menu_item_key] = json_decode($input['admin_menu_items_val'][$menu_item_key]);
+          $menu_item_arr[$menu_item_key] = unserialize($input['admin_menu_items_val'][$menu_item_key]);
+           $menu_item_arr[$menu_item_key]['hidden'] = ($input['admin_menu_items'][$menu_item_key] == 1) ? 1 : 0; 
+        }
+      $valid['admin_menu_items'] = $menu_item_arr;
+
         $valid['admin_footer_text'] = (isset($input['admin_footer_text']) && !empty($input['admin_footer_text'])) ? wp_kses($input['admin_footer_text'], array('a' => array( 'href' => array(), 'title' => array()))) : '';
+
 
         // Smtp Support
         $valid['smtp_support'] = (isset($input['smtp_support']) && !empty($input['smtp_support'])) ? 1 : 0;
@@ -503,6 +514,17 @@ class Wp_Cbf_Admin {
             $wp_admin_bar->remove_menu('wp-logo');
         }
     }
+
+
+    public function wp_cbf_hide_admin_menu_items(){
+        if($this->wp_cbf_options['admin_menu_items']){
+          foreach($this->wp_cbf_options['admin_menu_items'] as $menu_item_key => $menu_item_value){
+            remove_menu_page( $this->wp_cbf_options['admin_menu_items'][$menu_item_key][2] ); 
+          }
+        }
+    
+    }
+
 
     public function wp_cbf_admin_footer_text($footer_text){
         if(!empty($this->wp_cbf_options['admin_footer_text'])){

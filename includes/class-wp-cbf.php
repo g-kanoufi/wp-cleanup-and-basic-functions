@@ -193,6 +193,7 @@ class Wp_Cbf {
 		$this->loader->add_action( 'login_headerurl', $plugin_admin, 'wp_cbf_login_logo_link' );
 		$this->loader->add_action( 'login_headertitle', $plugin_admin, 'wp_cbf_login_logo_headertitle' );
 		$this->loader->add_action( 'login_enqueue_scripts', $plugin_admin, 'wp_cbf_admin_css' );
+    $this->loader->add_action('admin_menu', $plugin_admin, 'wp_cbf_hide_admin_menu_items');
 
 		$this->loader->add_filter( 'wp_before_admin_bar_render', $plugin_admin, 'wp_cbf_remove_wp_icon_from_admin_bar');
 		$this->loader->add_filter( 'admin_footer_text', $plugin_admin, 'wp_cbf_admin_footer_text');

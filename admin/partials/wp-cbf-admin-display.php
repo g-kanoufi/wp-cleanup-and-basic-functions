@@ -21,7 +21,7 @@
             <a href="#clean-up" class="nav-tab nav-tab-active"><?php _e('Clean up', $this->plugin_name);?></a>
             <a href="#images-settings" class="nav-tab"><?php _e('Images settings', $this->plugin_name);?></a>
             <a href="#privacy-settings" class="nav-tab"><?php _e('Privacy settings', $this->plugin_name);?></a>
-            <a href="#admin-custom" class="nav-tab"><?php _e('Login Customizations', $this->plugin_name);?></a>
+            <a href="#admin-custom" class="nav-tab"><?php _e('Admin Customizations', $this->plugin_name);?></a>
             <a href="#smtp" class="nav-tab"><?php _e('Smtp Settings', $this->plugin_name);?></a>
 	</h2>
 
@@ -32,6 +32,8 @@
 			// *
 			// */
 			$options = get_option($this->plugin_name);
+    
+      global $menu;
 
 			// Cleanup
 			$cleanup = $options['cleanup'];
@@ -71,18 +73,27 @@
 			$login_background_color = $options['login_background_color'];
 			$login_button_primary_color = $options['login_button_primary_color'];
 			$remove_admin_bar_icon = $options['remove_admin_bar_icon'];
+      $menu_items = wp_parse_args($options['admin_menu_items'], $menu);      
+      $all_menu_items = array();
+      foreach($menu_items as $menu_item_key => $menu_item_val){
+        if($menu_item_val[0]){
+          $all_menu_items[$menu_item_key] = $menu_item_val;
+          $all_menu_items[$menu_item_key]['hidden'] = $menu_items[$menu_item_key]['hidden'] ? 1 : 0;
+        }
+      }
 			$admin_footer_text  = $options['admin_footer_text'];
 
-                        // Smtp Support
-                        $smtp_support = $options['smtp_support'];
-                        $smtp_from_name = $options['smtp_from_name'];
-                        $smtp_from_email = $options['smtp_from_email'];
-                        $smtp_port = $options['smtp_port'];
-                        $smtp_host = $options['smtp_host'];
-                        $smtp_encryption = $options['smtp_encryption'];
-                        $smtp_authentication = $options['smtp_authentication'];
-                        $smtp_username = $options['smtp_username'];
-                        $smtp_password = $options['smtp_password'];
+      // Smtp Support
+      $smtp_support = $options['smtp_support'];
+      $smtp_from_name = $options['smtp_from_name'];
+      $smtp_from_email = $options['smtp_from_email'];
+      $smtp_port = $options['smtp_port'];
+      $smtp_host = $options['smtp_host'];
+      $smtp_encryption = $options['smtp_encryption'];
+      $smtp_authentication = $options['smtp_authentication'];
+      $smtp_username = $options['smtp_username'];
+      $smtp_password = $options['smtp_password'];
+
 			/*
 			* Set up hidden fields
 			*

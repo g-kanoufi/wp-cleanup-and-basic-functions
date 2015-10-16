@@ -33,6 +33,7 @@ It will help you:
 *    Add Retina support for your images.
 *    Add additional images sizes and modify those.
 *    Setup a Logo and background color for your login page
+*    Hide Administration menu items with a simple checkbox setup
 *    Add some more privacy adding a "referrer" meta tag
 *    If Yoast SEO is activated, can remove Yoast comments in head
 *    Set up for SMTP email settings    
@@ -91,6 +92,9 @@ Yes, just make sure you know what the option will do before you check it. But al
 
 ## Changelog ##
 
+### 2.2.0 ###
+New settings option, you can now hide administration menu items just by checking a box
+
 ### 2.1.1 ###
 Fixed a typo in the smtp port regex validation causing an error
 
@@ -117,6 +121,9 @@ Fixed some notice error making all checkboxes checked on first save and added po
 Initial Release
 
 ## Upgrade Notice ##
+
+### 2.2.0 ### 
+Nothing will break here but you might want to update as the new hide administration menu items is cool.
 
 ### 2.1.0 ###
 Make sure to update if you are having issues with the "Add media" in post editor.

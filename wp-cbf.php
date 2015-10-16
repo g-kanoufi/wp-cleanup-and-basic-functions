@@ -10,7 +10,7 @@
  * Plugin Name:       WP Cleanup and Basic Options Functions
  * Plugin URI:        http://lostwebdesigns.com
  * Description:       Head section cleanup and many usual custom settings used on every website setup as images settings and sizes, privacy, and basic admin customizations.
- * Version:           2.1.1
+ * Version:           2.2.0
  * Author:            Guillaume Kanoufi
  * Author URI:        http://lostwebdesigns.com
  * License:           GPL-2.0+

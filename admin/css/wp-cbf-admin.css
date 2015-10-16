@@ -57,12 +57,12 @@ input.short{
     border-color: #e35b5b;
 }
 
- .wp_cbf-admin-colors{
+.wp_cbf-admin-colors{
 	line-height: 34px;
 	padding: 6px 0;
- }
+}
 
- .wp_cbf-upload-preview{
+.wp_cbf-upload-preview{
 	min-height:100px;
 	position:relative;
 }
@@ -85,3 +85,12 @@ input.short{
 	cursor: pointer;
         box-shadow: 0 0 2px -1px #222;
 }
+
+ .wp_cbf-admin-menu-items{
+    margin-bottom:32px;
+    line-height:24px;
+  }
+ .wp_cbf-admin-menu-items h4{
+    margin-bottom:6px;
+  }
+
