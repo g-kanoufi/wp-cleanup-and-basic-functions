@@ -517,7 +517,7 @@ class Wp_Cbf_Admin {
 
 
     public function wp_cbf_hide_admin_menu_items(){
-        if($this->wp_cbf_options['admin_menu_items']){
+        if(isset($this->wp_cbf_options['admin_menu_items'])){
           foreach($this->wp_cbf_options['admin_menu_items'] as $menu_item_key => $menu_item_value){
             remove_menu_page( $this->wp_cbf_options['admin_menu_items'][$menu_item_key][2] ); 
           }

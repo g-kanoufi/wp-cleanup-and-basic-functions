@@ -73,12 +73,12 @@
 			$login_background_color = $options['login_background_color'];
 			$login_button_primary_color = $options['login_button_primary_color'];
 			$remove_admin_bar_icon = $options['remove_admin_bar_icon'];
-      $menu_items = wp_parse_args($options['admin_menu_items'], $menu);      
+      $menu_items = (isset($options['admin_menu_items'])) ? wp_parse_args($options['admin_menu_items'], $menu) : $menu ;      
       $all_menu_items = array();
       foreach($menu_items as $menu_item_key => $menu_item_val){
         if($menu_item_val[0]){
           $all_menu_items[$menu_item_key] = $menu_item_val;
-          $all_menu_items[$menu_item_key]['hidden'] = $menu_items[$menu_item_key]['hidden'] ? 1 : 0;
+          $all_menu_items[$menu_item_key]['hidden'] = (isset($menu_items[$menu_item_key]['hidden'])) ? 1 : 0;
         }
       }
 			$admin_footer_text  = $options['admin_footer_text'];
