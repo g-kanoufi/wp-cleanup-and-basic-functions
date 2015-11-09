@@ -76,7 +76,7 @@
       $menu_items = (isset($options['admin_menu_items'])) ? wp_parse_args($options['admin_menu_items'], $menu) : $menu ;      
       $all_menu_items = array();
       foreach($menu_items as $menu_item_key => $menu_item_val){
-        if($menu_item_val[0]){
+        if(isset($menu_item_val[0])){
           $all_menu_items[$menu_item_key] = $menu_item_val;
           $all_menu_items[$menu_item_key]['hidden'] = (isset($menu_items[$menu_item_key]['hidden'])) ? 1 : 0;
         }

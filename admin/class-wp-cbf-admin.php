@@ -278,13 +278,20 @@ class Wp_Cbf_Admin {
 
         $valid['remove_admin_bar_icon'] = (isset($input['remove_admin_bar_icon']) && !empty($input['remove_admin_bar_icon'])) ? 1 : 0;
 
+        global $menu;
         $menu_item_arr = array();
-        foreach($input['admin_menu_items'] as $menu_item_key => $menu_item_val){
-          //$menu_item_arr[$menu_item_key] = json_decode($input['admin_menu_items_val'][$menu_item_key]);
-          $menu_item_arr[$menu_item_key] = unserialize($input['admin_menu_items_val'][$menu_item_key]);
-           $menu_item_arr[$menu_item_key]['hidden'] = ($input['admin_menu_items'][$menu_item_key] == 1) ? 1 : 0; 
-        }
-      $valid['admin_menu_items'] = $menu_item_arr;
+        //error_log(print_r($input, true));
+      if(isset($input['admin_menu_items'])):
+          foreach($input['admin_menu_items'] as $menu_item_key => $menu_item_val){
+            //$menu_item_arr[$menu_item_key] = json_decode($input['admin_menu_items_val'][$menu_item_key]);
+        
+            $menu_item_arr[$menu_item_key] = (isset($input['admin_menu_items_val'])) ? unserialize($input['admin_menu_items_val'][$menu_item_key]) : $menu[$menu_item_key];
+            $menu_item_arr[$menu_item_key]['hidden'] = ($input['admin_menu_items'][$menu_item_key] == 1) ? 1 : 0; 
+          }
+        $valid['admin_menu_items'] = $menu_item_arr;
+      else:
+        $valid['admin_menu_items'] = array();
+      endif;
 
         $valid['admin_footer_text'] = (isset($input['admin_footer_text']) && !empty($input['admin_footer_text'])) ? wp_kses($input['admin_footer_text'], array('a' => array( 'href' => array(), 'title' => array()))) : '';
 
@@ -519,7 +526,9 @@ class Wp_Cbf_Admin {
     public function wp_cbf_hide_admin_menu_items(){
         if(isset($this->wp_cbf_options['admin_menu_items'])){
           foreach($this->wp_cbf_options['admin_menu_items'] as $menu_item_key => $menu_item_value){
-            remove_menu_page( $this->wp_cbf_options['admin_menu_items'][$menu_item_key][2] ); 
+            if(isset($this->wp_cbf_options['admin_menu_items'][$menu_item_key][2])){
+                remove_menu_page( $this->wp_cbf_options['admin_menu_items'][$menu_item_key][2] ); 
+            }
           }
         }
     
@@ -598,7 +607,7 @@ class Wp_Cbf_Admin {
         // Grab the smtp debugging output
         $smtp_debug = ob_get_clean();
         
-        echo json_encode(array('result' => $resulti));
+        echo json_encode(array('result' => $result));
         wp_die();
     }
 
